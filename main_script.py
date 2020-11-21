@@ -4,10 +4,7 @@ import telebot
 import json
 
 
-#TOKEN = os.environ.get('TOKEN')
-#bot = telebot.TeleBot(TOKEN)
-
-TOKEN = '1432118716:AAE-_JYwCRoGr8zAQbkr2i3vLpdHQZIzGqk'
+TOKEN = os.environ.get('TOKEN')
 bot = telebot.TeleBot(TOKEN)
 
 server = Flask(__name__)
@@ -53,14 +50,14 @@ def echo_message_planning(message):
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
-    return "Python Telegram Bot 21-11-2020", 200
+    return "Python_7838_bot", 200
 
 
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://python-test-bot-21-11-2020.herokuapp.com/' + TOKEN)
-    return "Python Telegram Bot 21-11-2020", 200
+    bot.set_webhook(url='https://python7838bot.herokuapp.com/' + TOKEN)
+    return "Python_7838_bot", 200
 
 
 if __name__ == "__main__":
